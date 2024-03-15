@@ -1,0 +1,25 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: sraoss-minimal-cluster
+spec:
+  teamId: "sraoss"
+  volume:
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    zalando:
+    - superuser
+    - createdb
+    foo_user: []
+  databases:
+    foo: zalando
+  preparedDatabases:
+    bar: {}
+  postgresql:
+    version: "12"
+  enableLogicalBackup: true
+  logicalBackupSchedule: "30 00 * * * *" 
+  enableConnectionPooler: true
+  connectionPooler:
+    numberOfInstances: 2
