@@ -1,9 +1,10 @@
 apiVersion: "acid.zalan.do/v1"
 kind: postgresql
 metadata:
-  name: sraoss-minimal-cluster
+  name: test-postgresql-cluster
+  namespace: default
 spec:
-  teamId: "sraoss"
+  teamId: "postgres-operator"
   volume:
     size: 1Gi
   numberOfInstances: 2
