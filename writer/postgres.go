@@ -2,10 +2,9 @@ package writer
 
 import (
 	"database/sql"
-	"fmt"
 )
 
 type PostgresWriter struct {
-	db *sql.DB
+	db     *sql.DB
 	config Config
 }
